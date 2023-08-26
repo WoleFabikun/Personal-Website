@@ -9,8 +9,8 @@ const Fashion = ({ fashionImages }) => {
             <main className="flex flex-col px-6 pt-20 font-sans sm:px-20 md:pt-28 lg:px-32 ">
                 {/* Fashion Modeling Content */}
                 <section className="flex flex-col items-center justify-center mt-8 mb-8 text-lg leading-8 text-left text-slate-200">
-                    <h1 className="mb-2 text-5xl font-bold text-slate-600 dark:text-slate-200">Fashion Modeling</h1>
-                    <p className="mb-4 text-slate-600 dark:text-slate-200">
+                    <h1 className="mb-2 text-5xl font-bold dark:text-slate-200 text-blue-600">Fashion Modeling</h1>
+                    <p className="mb-4 dark:text-slate-200 text-blue-600">
                         Explore my fashion modeling journey and experiences.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
