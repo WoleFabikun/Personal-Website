@@ -29,9 +29,6 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 	// limit to 6 posts
 	posts = posts.slice(0, 3);
 
-	//sort the skills alphabetically
-	//skill = skill.sort((a, b) => a.frontmatter.title - b.frontmatter.title);
-
 	const scroll = () => window.scrollTo(0, 750);
 
 	return (

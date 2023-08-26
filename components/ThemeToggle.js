@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SunIcon, MoonIcon } from '@radix-ui/react-icons'; // Assuming MoonIcon is available
+import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
 import { useContext, useEffect } from 'react';
 import { ThemeContext } from '@/providers/ThemeProvider';
 
