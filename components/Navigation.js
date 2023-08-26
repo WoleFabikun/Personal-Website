@@ -61,17 +61,17 @@ const Navigation = () => {
             </section>
 
             {/* Hamburger Menu Icon */}
-            <section className="md:hidden z-10 flex flex-row justify-center gap-2 py-3 flex-nowrap">
+            <section className="md:hidden z-50 flex flex-row justify-center gap-2 py-3 flex-nowrap ">
                 <Hamburger open={isMenuOpen} toggle={toggleMenu} />
             </section>
 
             {/* Mobile Menu */}
-            <div classname= {!isMenuOpen ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'}>
+            <div className= {!isMenuOpen ? 'hidden' : 'fixed z-10 top-0 left-0 w-full h-screen bg-blue-900 flex flex-col justify-center items-center'}>
                 {isMenuOpen && <MobileMenu />}
             </div>
 
             {/* Navigation Items */}
-            <section className={`hidden md:flex flex-row justify-center gap-7 flex-nowrap sm:${isMenuOpen ? 'block' : 'hidden'}`}>
+            <section className={`hidden md:flex flex-row justify-center gap-7 flex-nowrap sm:hidden`}>
                 <section className="flex flex-row justify-center gap-5 flex-nowrap">
                     {/* (NavItems) */}
                     <NavItem title={'Projects'} link={'/projects'} />
@@ -84,7 +84,7 @@ const Navigation = () => {
             </section>
 
             {/* Toggle Theme */}
-            <section className="flex flex-row justify-center gap-10 flex-nowrap">
+            <section className="flex flex-row justify-center z-50 gap-10 flex-nowrap">
                 <ThemeToggle />
             </section>
         </nav>
