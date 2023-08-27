@@ -41,13 +41,13 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 							<span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-blue-500 animate-gradient-x">Oluwole Fabikun</span>
 						</span>
 					</h1>
-					<span className="text-3xl font-bold text-left lg:text-7xl md:text-5xl dark:text-blue-500  text-blue-500 ">Tech enthusiast on a mission to architect smart solutions, elegant code, and breakthrough innovations.</span>
+					<span className="text-3xl font-bold text-left lg:text-7xl md:text-5xl dark:text-blue-500  text-blue-500 ">Software engineer on a mission to create smart solutions, efficient code, and breakthrough innovations.</span>
 
 					<Socials />
 				</section>
 				
 				{/* Divider */}
-				<span className="flex flex-col items-center mt-10 dark:text-blue-500 text-blue-500">
+				<span className="flex flex-col items-center mt-5 dark:text-blue-500 text-blue-500">
 					<DoubleArrowDownIcon className="w-10 h-10 cursor-pointer animate-pulse" onClick={scroll} />
 				</span>
 
