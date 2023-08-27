@@ -1,4 +1,3 @@
-import ProjectCard from '@/components/ProjectCard';
 import Footer from '@/components/Footer';
 import Layout from '@/components/Layout';
 import Project from '@/components/Project';

@@ -5,7 +5,7 @@ export default function Document() {
         <Html lang="en">
             <Head>
                 {/* Primary Meta Tags */}
-                <meta name="title" content="David Oduneye" />
+                <meta name="title" content="Oluwole Fabikun" />
                 <meta
                     name="description"
                     content="Wole Fabikun's portfolio website and blog. Senior Computer Science major at the University of Massachusetts Amherst."
