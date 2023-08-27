@@ -13,7 +13,7 @@ const NavItem = (props) => {
 
     if (isContact) {
         return (
-            <a href="mailto:wole359@gmail.com" className="pt-2 my-2 backdrop:font-sans text-4xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
+            <a href="mailto:wole359@gmail.com" className="pt-2 my-2 backdrop:font-sans text-3xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
                 {props.title}
             </a>
         );
@@ -22,14 +22,14 @@ const NavItem = (props) => {
     if (props.link.startsWith('http') || props.link.startsWith('www')) {
         // If the link starts with 'http' or 'www', open in a new tab/window
         return (
-            <a href={props.link} target="_blank" rel="noopener noreferrer" className="pt-2 my-2 font-sans text-4xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
+            <a href={props.link} target="_blank" rel="noopener noreferrer" className="pt-2 my-2 font-sans text-3xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
                 {props.title}
             </a>
         );
     }
 
     return (
-        <Link href={active ? '#' : props.link} className="pt-2 my-2 font-sans text-4xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
+        <Link href={active ? '#' : props.link} className="pt-2 my-2 font-sans text-3xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
             {props.title}
         </Link>
     );
@@ -55,6 +55,7 @@ const MobileMenu = () => {
             <NavItem title={'Resume'} link={'/assets/text/Fabikun_Oluwole_2024.pdf'} />
             <NavItem title={'Blogs'} link={'/posts'} />
             <NavItem title={'Barbershop'} link={'https://www.instagram.com/wolescuts/'} />
+            <NavItem title={'Modeling'} link={'/fashion'} />
             <NavItem title={'Contact'} link={'/contact'} />
         </div>
     );
@@ -67,7 +68,7 @@ const Navigation = () => {
     };
 
     return (
-        <nav className="flex flex-row justify-between w-screen px-5 py-5 mx-auto font-sans text-2xl font-normal leading-normal text-left break-words align-middle sm:mx-0 max-w-prose sm:max-w-none text-slategrey-50 subpixel-antialiase dark:text-slate-100 text-slate-600">
+        <nav className="flex flex-row justify-between w-screen px-5 py-5 mx-auto font-sans font-normal leading-normal text-left break-words align-middle sm:mx-0 max-w-prose sm:max-w-none text-slategrey-50 subpixel-antialiase dark:text-slate-100 text-slate-600">
             <section className="flex flex-row justify-center gap-2 flex-nowrap">
                 <NavItem title={'Home'} link={'/'} />
             </section>
@@ -90,7 +91,7 @@ const Navigation = () => {
                     <NavItem title={'Resume'} link={'/assets/text/Fabikun_Oluwole_2024.pdf'} />
                     <NavItem title={'Blogs'} link={'/posts'} />
                     <NavItem title={'Barbershop'} link={'https://www.instagram.com/wolescuts/'} />
-                    <NavItem title={'Fashion'} link={'/fashion'} />
+                    <NavItem title={'Modeling'} link={'/fashion'} />
                     <NavItem title={'Contact'} link={'/contact'} />
                 </section>
             </section>
