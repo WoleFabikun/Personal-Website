@@ -1,4 +1,3 @@
-import PostCard from '@/components/PostCard';
 import Post from '@/components/Post';
 import Footer from '@/components/Footer';
 import Layout from '@/components/Layout';

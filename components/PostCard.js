@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { ArrowRightIcon } from '@radix-ui/react-icons'
 
 export default function PostCard(props) {
     const { post: { frontmatter: { title, date, description }, slug } } = props;
