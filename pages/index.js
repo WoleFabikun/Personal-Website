@@ -47,8 +47,8 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 				</section>
 				
 				{/* Divider */}
-				<span className="flex flex-col items-center mt-5 dark:text-blue-500 text-blue-500">
-					<DoubleArrowDownIcon className="w-10 h-10 cursor-pointer animate-pulse" onClick={scroll} />
+				<span className="flex flex-col items-center mt-12 dark:text-blue-500 text-blue-500">
+					<DoubleArrowDownIcon className="w-10 h-10 mb-5 cursor-pointer animate-pulse" onClick={scroll} />
 				</span>
 
 				{/* About Me */}
