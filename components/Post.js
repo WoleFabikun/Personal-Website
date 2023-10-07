@@ -4,7 +4,7 @@ const Posts = ({ posts }) => {
     return (
         <>
             <section className="flex flex-row justify-center p-10">
-                <p className="mt-1 text-base text-slate-100">{`Things I\'ve written.`}</p>
+                <p className="mt-1 text-base dark:text-slate-200 text-blue-600">{`Things I\'ve written.`}</p>
             </section>
 
             <section className="grid gap-5 grid-col-1 md:grid-cols-1 lg:grid-cols-3">

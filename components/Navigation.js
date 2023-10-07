@@ -69,7 +69,7 @@ const Navigation = () => {
 
     return (
         <nav className="flex flex-row justify-between w-screen px-5 py-5 mx-auto font-sans font-normal leading-normal text-left break-words align-middle sm:mx-0 max-w-prose sm:max-w-none text-slategrey-50 subpixel-antialiase dark:text-slate-100 text-slate-600">
-            <section className="flex flex-row justify-center gap-2 flex-nowrap">
+            <section className="flex flex-row justify-center gap-2 flex-nowrap ">
                 <NavItem title={'Home'} link={'/'} />
             </section>
 
