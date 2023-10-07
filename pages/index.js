@@ -66,7 +66,7 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 				</section>
 
 				{/* Projects */}
-				<section className="grid w-full h-full grid-flow-row auto-row-max" >
+				<section className="grid w-full h-full grid-flow-row auto-row-max " >
 					<Project projects={projects} />
 					<ButtonLink route={"/projects"} />
 				</section>
