@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { HamburgerMenuIcon, ExitIcon } from '@radix-ui/react-icons';
 import ThemeToggle from './ThemeToggle.js';
-import Robot from "../public/favicon_io/favicon-32x32.png";
 
 const NavItem = (props) => {
     const location = useRouter().pathname;
