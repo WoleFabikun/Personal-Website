@@ -3,27 +3,33 @@ import Image from "next/image";
 import { readdirSync } from "fs";
 import { join } from "path";
 
-const Fashion = ({ fashionImages }) => {
+const Fashion = ({ mediaItems }) => {
     return (
         <Layout>
             <main className="flex flex-col px-6 pt-20 font-sans sm:px-20 md:pt-28 lg:px-32 ">
-                {/* Fashion Modeling Content */}
                 <section className="flex flex-col items-center justify-center mt-8 mb-8 text-lg leading-8 text-left text-slate-200">
-                    <h1 className="mb-2 text-5xl font-bold dark:text-slate-200 text-blue-600">Fashion Modeling</h1>
+                    <h1 className="mb-2 text-5xl font-bold dark:text-slate-200 text-blue-600">Fashion Media</h1>
                     <p className="mb-4 dark:text-slate-200 text-blue-600">
-                        Explore my fashion modeling journey and experiences.
+                        Explore my fashion media collection.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {fashionImages.map((src, index) => (
+                        {mediaItems.map((item, index) => (
                             <div key={index} className="w-full">
-                                <Image
-                                    src={src}
-                                    alt={`Fashion Image ${index}`}
-                                    width={800}
-                                    height={600}
-                                    layout="responsive"
-                                    objectFit="cover"
-                                />
+                                {item.type === 'image' ? (
+                                    <Image
+                                        src={item.src}
+                                        alt={`Fashion Image ${index}`}
+                                        width={800}
+                                        height={600}
+                                        layout="responsive"
+                                        objectFit="cover"
+                                    />
+                                ) : (
+                                    <video width={1920} height={1080} controls>
+                                        <source src={item.src} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -34,17 +40,20 @@ const Fashion = ({ fashionImages }) => {
 };
 
 export async function getStaticProps() {
-    // Get the file names of images in the fashionpix folder
     const imageFiles = readdirSync(join(process.cwd(), "public/assets/fashionpix"));
+    const videoFiles = readdirSync(join(process.cwd(), "public/assets/fashionvideos"));
 
-    // Create an array of image paths
-    const fashionImages = imageFiles.map((file) => `/assets/fashionpix/${file}`);
+    const imageItems = imageFiles.map((file) => ({ type: 'image', src: `/assets/fashionpix/${file}` }));
+    const videoItems = videoFiles.map((file) => ({ type: 'video', src: `/assets/fashionvideos/${file}` }));
+
+    const mediaItems = [...imageItems, ...videoItems];
 
     return {
         props: {
-            fashionImages,
+            mediaItems,
         },
     };
 }
 
 export default Fashion;
+
