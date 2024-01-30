@@ -1,1 +1,2 @@
+public/assets/fashionvideos/* filter=lfs diff=lfs merge=lfs -text
 public/assets/fashionvideos/fashionshow.mov filter=lfs diff=lfs merge=lfs -text
