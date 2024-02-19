@@ -26,8 +26,5 @@ Run the development server: npm run dev.
 Open your browser and visit http://localhost:3000 to see the website.
 Feel free to customize the content, styles, and components to make this personal website your own!
 
-# Credits
-Website template designed by Olukayode Oduneye
-
 # License
 This project is licensed under the MIT License.
