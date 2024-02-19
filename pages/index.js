@@ -54,7 +54,7 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 				{/* About Me */}
 				<section className="flex flex-col gap-10 mt-8 mb-8 text-lg leading-8 text-left dark:text-slate-200 text-blue-600">
 					<div className="flex flex-col items-center border rounded-lg shadow-md dark:border-slate-900 lg:flex-row bg-[#eeeef3] dark:bg-transparent">
-						<Image className="object-cover w-full rounded-t-lg h-96 lg:h-120 xl:h-100 xl:w-200 md:rounded-none md:rounded-l-lg" src={Headshot2} alt="" />
+						<Image className="object-contain w-full rounded-t-lg h-96 lg:h-120 xl:h-100 xl:w-200 md:rounded-none md:rounded-l-lg" src={Headshot2} alt="" />
 						<div className="flex flex-col justify-between p-4 leading-normal">
 							<h1 className="mb-2 text-2xl font-bold tracking-tight ">{title}</h1>
 							<MDXRemote {...mdxSource} components={{
