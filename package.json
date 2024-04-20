@@ -23,9 +23,12 @@
         "@mdx-js/loader": "^2.1.5",
         "@mdx-js/react": "^2.2.1",
         "@next/mdx": "^13.0.0",
+        "@radix-ui/react-dialog": "^1.0.5",
         "@radix-ui/react-icons": "^1.3.0",
         "axios": "^1.5.0",
         "babel-plugin-macros": "^3.1.0",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
         "dotenv": "^16.0.3",
         "firebase": "^9.15.0",
         "firebase-admin": "^11.4.1",
@@ -34,6 +37,7 @@
         "fs": "^0.0.1-security",
         "gray-matter": "^4.0.3",
         "headlessui": "^0.0.0",
+        "lucide-react": "^0.372.0",
         "next": "^13.0.0",
         "next-mdx-remote": "^4.1.0",
         "pattern.css": "^1.0.0",
@@ -44,7 +48,9 @@
         "reading-time": "^1.5.0",
         "sass": "^1.55.0",
         "styled-components": "^5.3.6",
-        "tailwind-styled-components": "^2.2.0"
+        "tailwind-merge": "^2.3.0",
+        "tailwind-styled-components": "^2.2.0",
+        "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",
