@@ -2,6 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+	output: 'export',
 	images: {
 		domains: ["res.craft.do"],
 		unoptimized: true,
