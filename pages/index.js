@@ -17,6 +17,27 @@ import Headshot2 from "../public/assets/images/Headshot2.jpeg";
 
 import ButtonLink from "@/components/ButtonLink";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+// Animation variants
+const fadeInUp = {
+	hidden: { opacity: 0, y: 60 },
+	visible: { 
+		opacity: 1, 
+		y: 0,
+		transition: { duration: 0.6, ease: "easeOut" }
+	}
+};
+
+const staggerContainer = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.2
+		}
+	}
+};
 
 const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => {
 
@@ -88,7 +109,11 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 		<Layout>
 			<main className="flex flex-col px-6 pt-20 font-sans sm:px-20 md:pt-15 lg:px-32 ">
 				{/* Hero */}
-				<section>
+				<motion.section
+					initial="hidden"
+					animate="visible"
+					variants={fadeInUp}
+				>
 					<h1 className="pb-3 font-sans font-bold text-slate-100 text-center lg:text-6xl text-7xl">
 						<span className="dark:drop-shadow-lg">
 							<span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-blue-500 animate-gradient-x">Lu Fabikun</span>
@@ -97,7 +122,7 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 					<span className="text-3xl font-bold text-center lg:text-4xl md:text-4xl dark:text-blue-500  text-blue-500  block">Software developer on a mission to create smart solutions, efficient code, and breakthrough innovations.</span>
 
 					<Socials />
-				</section>
+				</motion.section>
 				
 				{/* Divider */}
 				<span className="flex flex-col items-center mt-6 dark:text-blue-500 text-blue-500">
@@ -105,7 +130,14 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 				</span>
 
 				{/* Contact Box */}
-								<section id="contact" className="flex flex-col gap-6 mt-8 mb-12 text-center">
+				<motion.section 
+					id="contact" 
+					className="flex flex-col gap-6 mt-8 mb-12 text-center"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.3 }}
+					variants={fadeInUp}
+				>
 					<div className="border rounded-lg shadow-lg dark:border-slate-900 bg-gradient-to-br from-purple-400 to-blue-500 p-8">
 						<h2 className="mb-4 text-3xl font-bold text-white">Available for Projects</h2>
 						<p className="mb-6 text-lg text-white/90">
@@ -219,10 +251,16 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 							</div>
 						)}
 					</div>
-				</section>
+				</motion.section>
 
 				{/* About Me */}
-				<section className="flex flex-col gap-10 mt-8 mb-8 text-lg leading-8 text-left dark:text-slate-200 text-blue-600">
+				<motion.section 
+					className="flex flex-col gap-10 mt-8 mb-8 text-lg leading-8 text-left dark:text-slate-200 text-blue-600"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.1 }}
+					variants={fadeInUp}
+				>
 					<div className="flex flex-col items-center border rounded-lg shadow-md dark:border-slate-900 lg:flex-row bg-[#eeeef3] dark:bg-transparent">
 						<Image className="object-contain w-full rounded-t-lg h-96 lg:h-120 xl:h-100 xl:w-200 md:rounded-none md:rounded-l-lg" src={Headshot2} alt="" />
 						<div className="flex flex-col justify-between p-4 leading-normal">
@@ -233,13 +271,19 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 							}} />
 						</div>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Projects */}
-				<section className="grid w-full h-full grid-flow-row auto-row-max " >
+				<motion.section 
+					className="grid w-full h-full grid-flow-row auto-row-max"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.1 }}
+					variants={fadeInUp}
+				>
 					<Project projects={projects} />
 					<ButtonLink route={"/projects"} />
-				</section>
+				</motion.section>
 
 				{/* Skills */}
 				{/* <section className="grid w-full h-full grid-flow-row mb-5 auto-row-max">
@@ -247,10 +291,16 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 				</section> */}
 
 				{/* Blog Posts */}
-				<section className="grid w-full h-full grid-flow-row mb-5 auto-row-max">
+				<motion.section 
+					className="grid w-full h-full grid-flow-row mb-5 auto-row-max"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.1 }}
+					variants={fadeInUp}
+				>
 					<Post posts={posts} />
 					<ButtonLink route={"/posts"} />
-				</section>
+				</motion.section>
 
 				{/* Footer */}
 				<Footer />
