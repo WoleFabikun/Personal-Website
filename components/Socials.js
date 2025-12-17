@@ -12,7 +12,7 @@ const SocialItem = (props) => {
 
 const Socials = () => {
     return (
-        <div className="flex flex-row gap-10 mt-10">
+        <div className="flex flex-row gap-10 mt-10 justify-end">
             {links.map((link) => (
                 <SocialItem key={link.name} name={link.name} url={link.url} icon={link.icon} />
             ))}

@@ -36,6 +36,16 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 
 	const scroll = () => window.scrollTo(0, 680);
 
+	const scrollToContact = () => {
+		setShowContactForm(true);
+		setTimeout(() => {
+			const contactSection = document.getElementById('contact');
+			if (contactSection) {
+				contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			}
+		}, 100);
+	};
+
 	const handleInputChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
@@ -76,40 +86,26 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 
 	return (
 		<Layout>
-			<main className="flex flex-col px-6 pt-20 font-sans sm:px-20 md:pt-28 lg:px-32 ">
+			<main className="flex flex-col px-6 pt-20 font-sans sm:px-20 md:pt-15 lg:px-32 ">
 				{/* Hero */}
 				<section>
-					<h1 className="pb-3 font-sans font-bold text-slate-100 lg:text-8xl text-7xl">
+					<h1 className="pb-3 font-sans font-bold text-slate-100 text-center lg:text-6xl text-7xl">
 						<span className="dark:drop-shadow-lg">
-							<span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-blue-500 animate-gradient-x">Oluwole Fabikun</span>
+							<span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-blue-500 animate-gradient-x">Lu Fabikun</span>
 						</span>
 					</h1>
-					<span className="text-3xl font-bold text-left lg:text-6xl md:text-4xl dark:text-blue-500  text-blue-500 ">Software developer on a mission to create smart solutions, efficient code, and breakthrough innovations.</span>
+					<span className="text-3xl font-bold text-center lg:text-4xl md:text-4xl dark:text-blue-500  text-blue-500  block">Software developer on a mission to create smart solutions, efficient code, and breakthrough innovations.</span>
 
 					<Socials />
 				</section>
 				
 				{/* Divider */}
-				<span className="flex flex-col items-center mt-12 dark:text-blue-500 text-blue-500">
+				<span className="flex flex-col items-center mt-6 dark:text-blue-500 text-blue-500">
 					<DoubleArrowDownIcon className="w-10 h-10 mb-5 cursor-pointer animate-pulse" onClick={scroll} />
 				</span>
 
-				{/* About Me */}
-				<section className="flex flex-col gap-10 mt-8 mb-8 text-lg leading-8 text-left dark:text-slate-200 text-blue-600">
-					<div className="flex flex-col items-center border rounded-lg shadow-md dark:border-slate-900 lg:flex-row bg-[#eeeef3] dark:bg-transparent">
-						<Image className="object-contain w-full rounded-t-lg h-96 lg:h-120 xl:h-100 xl:w-200 md:rounded-none md:rounded-l-lg" src={Headshot2} alt="" />
-						<div className="flex flex-col justify-between p-4 leading-normal">
-							<h1 className="mb-2 text-2xl font-bold tracking-tight ">{title}</h1>
-							<MDXRemote {...mdxSource} components={{
-								p: ({ children, ...props }) => <p className="mb-3 text-base font-normal dark:text-slate-200 text-blue-600" {...props}>{children}</p>,
-								a: ({ children, ...props }) => <a className="dark:text-blue-300 text-blue-900 hover:underline underline-offset-4 " {...props}>{children}</a>,
-							}} />
-						</div>
-					</div>
-				</section>
-
 				{/* Contact Box */}
-				<section id="contact" className="flex flex-col gap-6 mt-8 mb-12 text-center">
+								<section id="contact" className="flex flex-col gap-6 mt-8 mb-12 text-center">
 					<div className="border rounded-lg shadow-lg dark:border-slate-900 bg-gradient-to-br from-purple-400 to-blue-500 p-8">
 						<h2 className="mb-4 text-3xl font-bold text-white">Available for Projects</h2>
 						<p className="mb-6 text-lg text-white/90">
@@ -118,7 +114,7 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 						
 						{!showContactForm ? (
 							<button 
-								onClick={() => setShowContactForm(true)}
+								onClick={scrollToContact}
 								className="inline-block px-8 py-3 text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-slate-100 transition-colors duration-200 shadow-md hover:shadow-xl"
 							>
 								Get in Touch
@@ -222,6 +218,20 @@ const Home = ({ posts, projects, skill, mdxSource, frontmatter: { title } }) => 
 								</form>
 							</div>
 						)}
+					</div>
+				</section>
+
+				{/* About Me */}
+				<section className="flex flex-col gap-10 mt-8 mb-8 text-lg leading-8 text-left dark:text-slate-200 text-blue-600">
+					<div className="flex flex-col items-center border rounded-lg shadow-md dark:border-slate-900 lg:flex-row bg-[#eeeef3] dark:bg-transparent">
+						<Image className="object-contain w-full rounded-t-lg h-96 lg:h-120 xl:h-100 xl:w-200 md:rounded-none md:rounded-l-lg" src={Headshot2} alt="" />
+						<div className="flex flex-col justify-between p-4 leading-normal">
+							<h1 className="mb-2 text-2xl font-bold tracking-tight ">{title}</h1>
+							<MDXRemote {...mdxSource} components={{
+								p: ({ children, ...props }) => <p className="mb-3 text-base font-normal dark:text-slate-200 text-blue-600" {...props}>{children}</p>,
+								a: ({ children, ...props }) => <a className="dark:text-blue-300 text-blue-900 hover:underline underline-offset-4 " {...props}>{children}</a>,
+							}} />
+						</div>
 					</div>
 				</section>
 
