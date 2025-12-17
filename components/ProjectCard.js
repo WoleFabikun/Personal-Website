@@ -7,7 +7,7 @@ export default function ProjectCard(props) {
 
     const { project: { frontmatter: { title, date, description, link, button, stack } } } = props;
 
-    const url = link == '#' ? 'mailto:wole359@gmail.com' : `https://www.` + link;
+    const url = link == '#' ? 'mailto:lufabikun@gmail.com' : `https://www.` + link;
 
     const stackList = stack.includes(' — ') ? stack.split(' — ') : stack.split('—');
 

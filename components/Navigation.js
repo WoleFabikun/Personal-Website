@@ -11,8 +11,23 @@ const NavItem = (props) => {
     const isContact = props.link === '/contact';
 
     if (isContact) {
+        // Scroll to contact section on homepage, otherwise navigate to home with hash
+        const handleContactClick = (e) => {
+            if (location === '/') {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        };
+
         return (
-            <a href="mailto:wole359@gmail.com" className="pt-2 my-2 backdrop:font-sans text-3xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
+            <a 
+                href="/#contact" 
+                onClick={handleContactClick}
+                className="pt-2 my-2 backdrop:font-sans text-xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black"
+            >
                 {props.title}
             </a>
         );
@@ -21,14 +36,14 @@ const NavItem = (props) => {
     if (props.link.startsWith('http') || props.link.startsWith('www')) {
         // If the link starts with 'http' or 'www', open in a new tab/window
         return (
-            <a href={props.link} target="_blank" rel="noopener noreferrer" className="pt-2 my-2 font-sans text-3xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
+            <a href={props.link} target="_blank" rel="noopener noreferrer" className="pt-2 my-2 font-sans text-xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
                 {props.title}
             </a>
         );
     }
 
     return (
-        <Link href={active ? '#' : props.link} className="pt-2 my-2 font-sans text-3xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
+        <Link href={active ? '#' : props.link} className="pt-2 my-2 font-sans text-xl cursor-pointer hover:underline dark:hover:decoration-slate-200 hover:decoration-slate-600 hover:underline-offset-8 hover:decoration-3 dark:text-slate-200 text-black">
             {props.title}
         </Link>
     );
@@ -51,10 +66,10 @@ const MobileMenu = () => {
         <div className="flex flex-col items-center">
             <NavItem title={'Home'} link={'/'} className= "text-slate-200"/>
             <NavItem title={'Projects'} link={'/projects'} />
-            <NavItem title={'Resume'} link={'/assets/text/Fabikun_Oluwole_2024.pdf'} />
+            {/* <NavItem title={'Resume'} link={'/assets/text/Fabikun_Oluwole_2024.pdf'} /> */}
             <NavItem title={'Blogs'} link={'/posts'} />
-            <NavItem title={'Barbershop'} link={'https://www.instagram.com/wolescuts/'} />
-            <NavItem title={'Modeling'} link={'/fashion'} />
+            {/* <NavItem title={'Barbershop'} link={'https://www.instagram.com/wolescuts/'} /> */}
+            {/* <NavItem title={'Modeling'} link={'/fashion'} /> */}
             <NavItem title={'Contact'} link={'/contact'} />
         </div>
     );
@@ -87,10 +102,10 @@ const Navigation = () => {
                 <section className="flex flex-row justify-center gap-5 flex-nowrap">
                     {/* (NavItems) */}
                     <NavItem title={'Projects'} link={'/projects'} />
-                    <NavItem title={'Resume'} link={'/assets/text/Fabikun_Oluwole_2024.pdf'} />
+                    {/* <NavItem title={'Resume'} link={'/assets/text/Fabikun_Oluwole_2024.pdf'} /> */}
                     <NavItem title={'Blogs'} link={'/posts'} />
-                    <NavItem title={'Barbershop'} link={'https://www.instagram.com/wolescuts/'} />
-                    <NavItem title={'Modeling'} link={'/fashion'} />
+                    {/* <NavItem title={'Barbershop'} link={'https://www.instagram.com/wolescuts/'} /> */}
+                    {/* <NavItem title={'Modeling'} link={'/fashion'} /> */}
                     <NavItem title={'Contact'} link={'/contact'} />
                 </section>
             </section>
