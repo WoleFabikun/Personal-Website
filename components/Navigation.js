@@ -18,6 +18,13 @@ const NavItem = (props) => {
                 const contactSection = document.getElementById('contact');
                 if (contactSection) {
                     contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Wait for scroll to complete, then click the "Get in Touch" button
+                    setTimeout(() => {
+                        const getInTouchButton = contactSection.querySelector('button');
+                        if (getInTouchButton) {
+                            getInTouchButton.click();
+                        }
+                    }, 500);
                 }
             }
         };
